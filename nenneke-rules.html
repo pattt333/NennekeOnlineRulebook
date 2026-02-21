@@ -378,7 +378,7 @@
 
       /* Tooltip styles */
       .doc-tooltip {
-        cursor: help;
+        cursor: pointer;
         text-decoration: underline dotted;
         text-decoration-color: #3498db;
         text-decoration-thickness: 4px;
@@ -4492,7 +4492,7 @@
           </p>
           <h5 id="we-stumpf">Stumpf:</h5>
           <p>Ermöglicht das Manöver Stumpfer Hieb.</p>
-          <h5 id="we-umklammernd">Umklammernd:</h5>
+          <h5 id="we-umklammern">Umklammernd:</h5>
           <p>
             Bei einem erfolgreichen Angriff mit dieser Waffe muss der Gegner
             eine GE-Probe (um -X erschwert) bestehen, um sich aus dem Umklammern
@@ -4522,6 +4522,20 @@
             solchen erfolgreich verteidigt wird. Ausweichen vermeidet diesen
             Schaden. Im unbewaffneten Kampf erleidest du also Schaden, da deine
             bloßen Hände die Waffen darstellen.
+          </p>
+          <h5 id="we-kein-malus-als-nebenwaffe">Kein Malus als Nebenwaffe:</h5>
+          <p>
+            Diese Waffe kann ohne den üblichen -4 Malus als Nebenwaffe geführt
+            werden. Angriffe und Verteidigungen sind damit nicht erschwert.
+          </p>
+          <h5 id="we-niederwerfen">Niederwerfen:</h5>
+          <p>
+            Ermöglicht das Manöver
+            <a href="#manover-niederwerfen">Niederwerfen</a>.
+          </p>
+          <h5 id="we-nicht-fuer-reiter">Nicht für Reiter:</h5>
+          <p>
+            Diese Waffe kann nicht zu Pferde eingesetzt werden.
           </p>
           <h5 id="we-zweihandig">Zweihändig:</h5>
           <p>
@@ -18302,6 +18316,17 @@
 
           element.addEventListener("mouseleave", () => {
             tooltipContainer.classList.remove("visible");
+          });
+
+          element.addEventListener("click", (e) => {
+            e.preventDefault();
+            const refId = element.getAttribute("data-ref");
+            if (!refId) return;
+            tooltipContainer.classList.remove("visible");
+            const targetElement = document.getElementById(refId);
+            if (targetElement) {
+              targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
           });
 
           element.addEventListener("mousemove", (e) => {
