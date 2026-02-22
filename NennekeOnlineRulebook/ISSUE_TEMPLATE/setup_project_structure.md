@@ -1,14 +1,14 @@
 ## Setup Project Structure
 
 ### Overview
-This document outlines the setup for the Nenneke Online Rulebook project, which consists of a frontend built with Vue 3, a backend powered by Node.js and Express, a PostgreSQL database, Docker for containerization, and GitHub Actions for continuous integration and deployment (CI/CD).
+This document outlines the setup for the Nenneke Online Rulebook project, which consists of a frontend built with React, a backend powered by Node.js and Express, a PostgreSQL database, Docker for containerization, and GitHub Actions for continuous integration and deployment (CI/CD).
 
 ### Project Structure
 
 ```
 NennekeOnlineRulebook/
 │
-├── frontend/              # Vue 3 application
+├── frontend/              # react application
 │   ├── src/              # Source files
 │   ├── public/           # Static assets
 │   └── package.json      # Dependencies and scripts
@@ -33,7 +33,7 @@ NennekeOnlineRulebook/
 
 ### Detailed Steps
 1. **Frontend Setup**:
-   - Create a new Vue 3 application using Vue CLI.
+   - Create a new react application using Vue CLI.
    - Configure router and state management as needed.
 
 2. **Backend Setup**:
